@@ -95,6 +95,10 @@ class HomeTableViewController: UITableViewController {
             cell.profileImage.image = UIImage(data: imgData)
         }
         
+        // whether current tweet is favorited or not
+        cell.setFavorite(tweetArr[indexPath.row]["favorited"] as! Bool)
+        cell.tweetId = tweetArr[indexPath.row]["id"] as! Int
+        cell.setRetweeted(tweetArr[indexPath.row]["retweeted"] as! Bool)
         return cell
     }
     // MARK: - Table view data source
